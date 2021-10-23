@@ -12,5 +12,7 @@ module.exports.duplicateEncode = function duplicateEncode(str){
         else result += ")";
     }
 
+    result = (str.slice(-1)).toString() === '\n' ? result.slice(0, -2) : result
+    
     return result
 };
