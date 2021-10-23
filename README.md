@@ -36,17 +36,17 @@ explanation:
 t1.1 input.txt to output.txt :
 
 ```
-$ [node] rot  -i "./input.txt" -o "./output.txt" -a t1.1
+$ [node] index  -i "./input.txt" -o "./output.txt" -a t1.1
 ```
 
 t1.2 input2.txt to output2.txt :
 
 ```
-$ [node] rot --input input2.txt --output output2.txt --action t1.2
+$ [node] index --input input2.txt --output output2.txt --action t1.2
 ```
 
 t1.1 stdin to stdout:
 
 ```
-$ [node] rot --action t1.1
+$ [node] index --action t1.1
 ```
