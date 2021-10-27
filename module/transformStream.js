@@ -4,20 +4,25 @@ const { duplicateEncode } = require('./duplicateEncode.js');
 const { multiplication } = require('./multiplication.js');
 
 class TransformStream extends Transform {
-    constructor(action) {
+    constructor(task) {
         super();
-        this.action = action;
+        this.task = task;
     }
 
     _transform(chunk, _, done) {
         let result = '';
 
-        switch (this.action) {
+        switch (this.task) {
             case 't1.1':
                 result = duplicateEncode(chunk.toString('utf8'));
                 break;
             case 't1.2':
-                result = multiplication(chunk);
+                if ( +chunk > 0) {
+                    result = multiplication(+chunk);
+                } else {
+                    process.stderr.write('Erorr: Please enter a number greater than 0 !!!\n')
+                    process.exit(1);
+                }
                 break;
             default:
                 process.stderr.write(' Erorr: Action not found\n');

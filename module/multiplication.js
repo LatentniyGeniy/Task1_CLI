@@ -1,12 +1,14 @@
 
 module.exports.multiplication = function multiplication(len) {
 
-    let result = '\n'
+    let result = [], res = ''
     for (let i = 1; i <= len; i++) {
         for (let j = 1; j <= len; j++) {
-            result += (i * j+' ');
+            res += (i * j+',');
         }
-        result += '\n'
+        result += ',['+res+']'
+        res = ''
     }
-    return result
+    result = result.slice(1)
+    return '['+result+']\n'
 }
